@@ -15,7 +15,7 @@ namespace Task3
             double secondBasis = Parse(ReadLine());
             double angle = Parse(ReadLine());
 
-            WriteLine($"The result is { ((firstBasis + secondBasis) / 2) *  Abs( (Abs(firstBasis - secondBasis) / 2 ) * Tan(angle) ) }");
+            WriteLine($"The result is { ((firstBasis + secondBasis) / 2) *  Abs( (Abs(firstBasis - secondBasis) / 2 ) * Tan(angle) ) }"); 
 
             ReadKey();
         }

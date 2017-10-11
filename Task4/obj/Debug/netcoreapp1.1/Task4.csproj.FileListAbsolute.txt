@@ -1,0 +1,10 @@
+C:\Users\Alexandr\source\repos\USTasks\Task4\bin\Debug\netcoreapp1.1\Task4.deps.json
+C:\Users\Alexandr\source\repos\USTasks\Task4\bin\Debug\netcoreapp1.1\Task4.runtimeconfig.json
+C:\Users\Alexandr\source\repos\USTasks\Task4\bin\Debug\netcoreapp1.1\Task4.runtimeconfig.dev.json
+C:\Users\Alexandr\source\repos\USTasks\Task4\bin\Debug\netcoreapp1.1\Task4.dll
+C:\Users\Alexandr\source\repos\USTasks\Task4\bin\Debug\netcoreapp1.1\Task4.pdb
+C:\Users\Alexandr\source\repos\USTasks\Task4\obj\Debug\netcoreapp1.1\Task4.csproj.CoreCompileInputs.cache
+C:\Users\Alexandr\source\repos\USTasks\Task4\obj\Debug\netcoreapp1.1\Task4.AssemblyInfo.cs
+C:\Users\Alexandr\source\repos\USTasks\Task4\obj\Debug\netcoreapp1.1\Task4.dll
+C:\Users\Alexandr\source\repos\USTasks\Task4\obj\Debug\netcoreapp1.1\Task4.pdb
+C:\Users\Alexandr\source\repos\USTasks\Task4\obj\Debug\netcoreapp1.1\Task4.csprojResolveAssemblyReference.cache
