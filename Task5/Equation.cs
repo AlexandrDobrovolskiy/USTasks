@@ -23,7 +23,7 @@ namespace Lesson1
 
         public String toString()
         {
-            return $"I'm equation, \n {a}x^2 + {b}x + {c} = 0 ";
+            return $"\n {a}x^2 + {b}x + {c} = 0 \n";
         }
 
         public string getRoots()
