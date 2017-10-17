@@ -30,11 +30,6 @@ namespace Task8
             return dir;
         }
 
-        static void Game(string[,] array, string direction, int currentA, int currentB, int totalA, int totalB)
-        {
-            
-        }
-
 
         static void Main(string[] args)
         {
@@ -63,7 +58,7 @@ namespace Task8
             {
                 if (grid[currentA, currentB] == "#|")
                     changeDirection();
-
+                
                 switch (direction)
                 {
                     case "UL":
@@ -111,6 +106,7 @@ namespace Task8
                         }
                         break;
                 }
+                
 
                 string res = "";
 
@@ -123,13 +119,12 @@ namespace Task8
                     }
                     res += "\n";
                 }
+
                 WriteLine(res);
                 WriteLine(currentA + " " + currentB);
-                System.Threading.Thread.Sleep(50);
+                System.Threading.Thread.Sleep(10);
                 Clear();
             }
-
-            ReadKey();
         }
     }
 }
