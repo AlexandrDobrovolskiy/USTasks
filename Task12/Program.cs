@@ -18,7 +18,7 @@ namespace Task12
             }
 
 
-            double[] distanses = new double[100];
+            double[] distanses = new double[100]; 
 
             for(int i = 0; i < 10; i++)
             {
