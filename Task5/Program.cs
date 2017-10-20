@@ -16,8 +16,7 @@ namespace Lesson1
 
             Equation myEquation = new Equation(A, B, C);
 
-            WriteLine(myEquation.toString());
-            WriteLine(myEquation.getRoots());
+            WriteLine(myEquation.toString() + "/n" + myEquation.getRoots());
             ReadKey();
         }
     }

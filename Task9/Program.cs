@@ -7,23 +7,23 @@ namespace Task9
     class Program
     {
 
-        static double root(double n)
+        static double Root(double n)
         {
-            double lo = 0, hi = n, mid = -1 ;
+            double lo = 0, hight = n, midle = -1 ;
             for (int i = 0; i < 1000; i++)
             {
-                mid = (lo + hi) / 2;
-                if (mid * mid == n) return mid;
-                if (mid * mid > n)
+                midle = (lo + hight) / 2;
+                if (midle * midle == n) return midle;
+                if (midle * midle > n)
                 {
-                    hi = mid;
+                    hight = midle;
                 }
                 else
                 {
-                    lo = mid;
+                    lo = midle;
                 }
             }
-            return mid;
+            return midle;
         }
 
         static void Main(string[] args)
@@ -31,7 +31,7 @@ namespace Task9
             Write("Enter n :");
             double n = Parse(ReadLine());
 
-            WriteLine($"The root is {root(n)}.");
+            WriteLine($"The root is {Root(n)}.");
 
             ReadKey();
         }
