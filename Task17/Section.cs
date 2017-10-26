@@ -8,6 +8,9 @@ namespace Task17
     {
         private Point a, b;
 
+        public Point A { get => a; set => a = value; }
+        public Point B { get => b; set => b = value; }
+
         public Section(Point a, Point b)
         {
             this.a = a;

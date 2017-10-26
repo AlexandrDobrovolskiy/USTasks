@@ -25,10 +25,15 @@ namespace Task17
             for (int i = 0; i < points.Count - 1 ; i++)
                 sections.Add(new Section(points[i], points[i + 1]));
 
-            bool isPoligon = true;
+            Section last = sections[sections.Count - 1];
+
+            bool isPoligon = !(Section.Rotate(sections[0].A, sections[0].B, last.B) == 0);
 
             for (int i = 1; i < sections.Count; i++)
             {
+                if (!isPoligon)
+                    break;
+
                 for (int j = 0; j < i; j++)
                 {
                     if (Section.Intersect(sections[i], sections[j]))
@@ -37,8 +42,6 @@ namespace Task17
                         break;
                     }
                 }
-                if (!isPoligon)
-                    break;
             }
 
             WriteLine(isPoligon);
