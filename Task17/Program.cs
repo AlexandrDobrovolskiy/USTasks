@@ -20,14 +20,31 @@ namespace Task17
                 points.Add(new Point(Parse(coords[0]), Parse(coords[1])) );
             }
 
-            bool result = true;
+            List<Section> sections = new List<Section>();
 
-            for (int i = 2; i < points.Count; i++)
+            for (int i = 0; i < points.Count - 1 ; i++)
+                sections.Add(new Section(points[i], points[i + 1]));
+
+            bool isPoligon = true;
+
+            for (int i = 1; i < sections.Count; i++)
             {
-
+                for (int j = 0; j < i; j++)
+                {
+                    if (Section.Intersect(sections[i], sections[j]))
+                    {
+                        isPoligon = false;
+                        break;
+                    }
+                }
+                if (!isPoligon)
+                    break;
             }
 
+            WriteLine(isPoligon);
+           
             ReadKey();
+
         }
     }
 }
