@@ -17,12 +17,17 @@ namespace Task17
             this.b = b;
         }
 
-        public static int Rotate(Point a, Point b, Point c)
+        /* Проверяет положение точки С относительно АВ
+         * Принимает 3 точки А, В и С
+         * Возвращает положительное число если С находится слева, отрицательное если справа, 0 если С лежит на АВ
+         */
+        public static int Rotate(Point a, Point b, Point c) 
         {
             return (b.x - a.x) * (c.y - b.y) - (b.y - a.y) * (c.x - b.x);
         }
 
-        public static bool Intersect(Section first, Section second)
+        // Определяет пересекаются ли отрезки
+        public static bool Intersect(Section first, Section second) 
         {
             Point a = first.a;
             Point b = first.b;
