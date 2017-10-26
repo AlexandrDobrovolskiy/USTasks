@@ -7,3 +7,4 @@ C:\Users\Alexandr\source\repos\USTasks\Task6\obj\Debug\netcoreapp1.1\Task6.cspro
 C:\Users\Alexandr\source\repos\USTasks\Task6\obj\Debug\netcoreapp1.1\Task6.AssemblyInfo.cs
 C:\Users\Alexandr\source\repos\USTasks\Task6\obj\Debug\netcoreapp1.1\Task6.dll
 C:\Users\Alexandr\source\repos\USTasks\Task6\obj\Debug\netcoreapp1.1\Task6.pdb
+C:\Users\Alexandr\source\repos\USTasks\Task6\obj\Debug\netcoreapp1.1\Task6.csprojResolveAssemblyReference.cache

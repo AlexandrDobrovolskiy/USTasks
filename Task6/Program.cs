@@ -9,9 +9,9 @@ namespace Task6
         {
 
             string number = "";
-            bool isValid = true;
+            bool isValid = false;
 
-            while (isValid)
+            while (isValid == false)
             {
                 WriteLine("Enter number ( 100 <= number <= 999) : ");
 
@@ -20,7 +20,7 @@ namespace Task6
                 if (number.Length == 3)
                 {
                     WriteLine($"The result is {int.Parse(Convert.ToString(number[0])) + int.Parse(Convert.ToString(number[1])) + int.Parse(Convert.ToString(number[2]))}.");
-                    isValid = false;
+                    isValid = true;
                 }
             }
 

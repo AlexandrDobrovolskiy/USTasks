@@ -8,18 +8,16 @@ namespace Task11
     {
         static void Main(string[] args)
         {
-            WriteLine("Enter array you want (separate values by space): ");
-            int[] arr = new int[100];
+            WriteLine("Enter array you want (separate values by space): ");            
             string[] inputs = ReadLine().Split();
+            int res = int.Parse(inputs[0]);
 
-            for (int i = 0; i < inputs.Length; i++)
+            for (int i = 1; i < inputs.Length; i++)
             {
-                arr[i] = int.Parse(inputs[i]);
+                if (res < int.Parse(inputs[i])) res = int.Parse(inputs[i]); // I wish to use Array.Sort() for big arrays but in this poblem we have less then 100 numbers
             }
 
-            Array.Sort(arr);
-
-            WriteLine($"The bigest element is {arr[99]}.");
+            WriteLine($"The bigest element is {res}.");
             
             ReadKey();
         }

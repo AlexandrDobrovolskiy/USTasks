@@ -8,9 +8,9 @@ namespace Lesson1
     {
         private double a, b, c, desc;
 
-        public Equation(double a, double b, double c)
+        public Equation(double alfa, double b, double c)
         {
-            this.a = a;
+            this.a = alfa;
             this.b = b;
             this.c = c;
             this.desc = this.GetDesc();
