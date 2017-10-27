@@ -6,16 +6,17 @@ namespace Task19
 {
     static class Math
     {
-        public static double Pow(double n, int pow)
+        public static int Pow(int num, int pow)
         {
-            if (pow == 1)
-                return n;
-            else if (pow == 0)
-                return 1;
-            else if (pow > 1)
-                return n * Pow(n, pow - 1);
+            if (pow == 0) return 1;
+
+            if (pow % 2 == 1) return Pow(num, pow - 1) * num;
+
             else
-                throw new ArgumentOutOfRangeException();
+            {
+                int b = Pow(num, pow / 2);
+                return b * b;
+            }
         }
     }
 }
