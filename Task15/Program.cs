@@ -8,9 +8,6 @@ namespace Task15
     {
         static void Main(string[] args)
         {
-
-            
-
             WriteLine("Enter first sum (example 1.33 = 1 grn 33 cop): ");
 
             String[] inputs = ReadLine().Split('.');
