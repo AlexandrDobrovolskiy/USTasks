@@ -9,27 +9,32 @@ namespace Task14
     {
         static void Main(string[] args)
         {
-            int[,] grid = new int[10,5]
-            { 
-                {0,1,0,0,0 },
-                {1,1,1,0,1 },
-                {0,0,0,0,0 },
-                {1,1,1,0,0 },
-                {0,0,0,1,0 },
-                {0,1,1,1,1 },
-                {0,0,0,0,0 },
-                {1,0,1,0,0 },
-                {0,0,1,0,0 },
-                {1,0,1,0,0 }
-            };
+            WriteLine("Enter n and m (sizes of the image, separate by space): ");
+            String[] inputs = ReadLine().Split();
+
+            int n = int.Parse(inputs[0]);
+            int m = int.Parse(inputs[1]);
+            
+            int[,] grid = new int[n,m];
+
+            WriteLine("Enter image (separate pixeles by space, rowws - by enter): ");
+            for (int i = 0; i < n; i++)
+            {
+                string[] row = ReadLine().Split();
+                for (int j = 0; j < m; j++)
+                {
+                    grid[i,j] = Int32.Parse(row[j]);
+                }
+            }
 
             List<int[]> indexes = new List<int[]>();
 
 
 
-            for (int i = 0; i < 10; i++)
+
+            for (int i = 0; i < n; i++)
             {
-                for (int j = 0; j < 5; j++)
+                for (int j = 0; j < m; j++)
                 {
                     if (grid[i,j] == 1)
                     {
@@ -44,13 +49,14 @@ namespace Task14
             {
                 for (int j = 1; j < indexes.Count; j++)
                 {
-                    if (Math.Abs(indexes[i][0] - indexes[j][0]) == 1 || Math.Abs(indexes[i][1] - indexes[j][1]) == 1)
+                    if (Math.Abs(indexes[i][0] - indexes[j][0]) == 0 || Math.Abs(indexes[i][1] - indexes[j][1]) == 0)
                     {
                         indexes.RemoveAt(i);
                     }
                 }
             }
-            int count = indexes.Count;
+
+            int count = indexes.Count + 1;
 
             WriteLine(count);
 

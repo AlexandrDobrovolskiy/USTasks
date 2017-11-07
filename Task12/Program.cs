@@ -21,7 +21,23 @@ namespace Task12
                 points.Add(new Point(Parse(coords[0]), Parse(coords[1])));
             }
 
+            List<Section> sections = new List<Section>();
 
+            for (int i = 1; i < inputs.Length -1 ; i++)
+                for (int j = 0; j < inputs.Length- 1; j++)
+                    sections.Add(new Section(points[i], points[j]));
+
+            sections.Sort();
+
+
+            foreach (Section section in sections)
+            {
+                WriteLine(section.GetLength());
+            }
+
+            Triangle resTriangle = new Triangle(sections[0].A, sections[0].B, sections[1].B);
+
+            WriteLine($"The largest triangle has next perimeter {resTriangle.getPerimeter()%2f}.");
 
             ReadKey();
         }

@@ -32,7 +32,7 @@ namespace Task12
             first = new Section(a,b);
             second = new Section(b,c);
             third = new Section(c,a);
-            perimeter = first.getLength() + second.getLength() + third.getLength();
+            perimeter = first.GetLength() + second.GetLength() + third.GetLength();
         }
 
         

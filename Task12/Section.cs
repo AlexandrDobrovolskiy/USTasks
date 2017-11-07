@@ -21,17 +21,18 @@ namespace Task12
         }
 
 
-        public double getLength()
+        public double GetLength()
         {
             return length;
         }
 
         public bool Equals(Section other)
         {
-            throw new NotImplementedException();
+            if (other == null) return false;
+            return (this.length.Equals(other.length));
         }
 
-        public int CompareTo(Section other) => Convert.ToInt32(getLength() - other.getLength());
+        public int CompareTo(Section other) => Convert.ToInt32(other.GetLength() - GetLength());
 
 
     }
