@@ -12,17 +12,16 @@ namespace Task12
 
         double perimeter;
 
-        public double getPerimeter()
-        {
-            return perimeter;
-        }
+        public double getPerimeter() => perimeter;
 
-        internal Point A { get => a; set => a = value; }
-        internal Point B { get => b; set => b = value; }
-        internal Point C { get => c; set => c = value; }
-        internal Section First { get => first; set => first = value; }
-        internal Section Second { get => second; set => second = value; }
-        internal Section Third { get => third; set => third = value; }
+        public double countPerimeter() => first.GetLength() + second.GetLength() + third.GetLength();
+
+        internal Point A { get => a;}
+        internal Point B { get => b;}
+        internal Point C { get => c;}
+        internal Section First { get => first;}
+        internal Section Second { get => second;}
+        internal Section Third { get => third;}
 
         public Triangle(Point a, Point b, Point c)
         {
@@ -32,7 +31,7 @@ namespace Task12
             first = new Section(a,b);
             second = new Section(b,c);
             third = new Section(c,a);
-            perimeter = first.GetLength() + second.GetLength() + third.GetLength();
+            perimeter = countPerimeter();
         }
 
         

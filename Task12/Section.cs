@@ -19,12 +19,10 @@ namespace Task12
             this.b = b;
             length = Math.Sqrt( Math.Pow(b.X - a.X , 2) + Math.Pow(a.Y - b.Y, 2));
         }
+        
 
 
-        public double GetLength()
-        {
-            return length;
-        }
+        public double GetLength() => length;
 
         public bool Equals(Section other)
         {

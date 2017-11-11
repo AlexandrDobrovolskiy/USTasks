@@ -31,13 +31,12 @@ namespace Task12
 
 
             foreach (Section section in sections)
-            {
                 WriteLine(section.GetLength());
-            }
+           
 
             Triangle resTriangle = new Triangle(sections[0].A, sections[0].B, sections[1].B);
 
-            WriteLine($"The largest triangle has next perimeter {resTriangle.getPerimeter()%2f}.");
+            WriteLine($"The largest triangle has next perimeter {resTriangle.getPerimeter()}.");
 
             ReadKey();
         }
