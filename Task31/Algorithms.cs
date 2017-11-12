@@ -8,13 +8,14 @@ namespace Task31
         public static void SplitNum(int[] arrN)
         {
             int lastNum = arrN.Last();
+            int mid = lastNum / 2;
 
-            for (int i = 0; i < lastNum / 2; i++)
+            for (int i = 0; i < mid; i++)
             {
                 for (int j = 0; j < arrN.Length - 1; j++)
                     Console.Write(arrN[j] + "+");
 
-                Console.WriteLine($"{(lastNum / 2) - i}+{lastNum - ((lastNum / 2) - i)}");
+                Console.WriteLine($"{(mid) - i}+{lastNum - ((mid) - i)}");
             }
             if (lastNum != 1)
             {
