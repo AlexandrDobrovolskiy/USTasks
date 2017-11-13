@@ -10,28 +10,60 @@ namespace Task14
 
     class Program
     {
-        public static void Labeling(int[,] image, int H, int W)
+
+        public static int Labeling(int[,] image, int n, int m)
         {
             int L = 1;
-            for (int x =0; x < H; x++)
+            bool hasLabeled = false;
+
+            for (int i = 0; i < n; i++)
             {
-                for (int y = 0; y < W; y++)
+                for (int j = 0; j < m; j++)
                 {
-                    if (image[x, y] != 0)
+                    if (image[i, j] != 0)
                     {
-                        image[x, y] = L;
-                        if (image[x + 1, y] == 1) image[x + 1, y] = L;
-                        if (image[x, y + 1] == 1) image[x, y + 1] = L;
+                        if (!hasLabeled)
+                            try
+                            {
+                                if(image[i - 1, j] != L && image[i + 1, j] != L) L++;
+                            }
+                            catch (IndexOutOfRangeException) { }
+                            
+                        
+                        image[i, j] = L;
+                        try
+                        {
+                            if (image[i + 1, j] == 1) image[i + 1, j] = L;
+                        }
+                        catch (IndexOutOfRangeException)
+                        {
+                            try
+                            {
+                                if (image[i, j + 1] == 1) image[i, j + 1] = L;
+                            }
+                            catch (IndexOutOfRangeException) { }
+                        }
+                        try
+                        {
+                            if (image[i, j + 1] == 1) image[i, j + 1] = L;
+                        }
+                        catch (IndexOutOfRangeException)
+                        {
+                            try
+                            {
+                                if (image[i + 1, j] == 1) image[i + 1, j] = L;
+                            }
+                            catch (IndexOutOfRangeException) { }
+                        }
+                        hasLabeled = true;
+                    }else if (image[i, j] == 0)
+                    {
+                        hasLabeled = false;
                     }
-                    else L++;
                 }
+                
             }
-
-        }
-
-        public static void Fill(int[] image, int lables, int x, int y, int L)
-        {
-            
+            return L;
         }
 
         static void Main(string[] args)
@@ -39,8 +71,8 @@ namespace Task14
             WriteLine("Enter n and m (sizes of the image, separate by space): ");
             String[] inputs = ReadLine().Split();
 
-            int n = int.Parse(inputs[0]) + 1;
-            int m = int.Parse(inputs[1]) + 1;
+            int n = int.Parse(inputs[0]);
+            int m = int.Parse(inputs[1]);
 
             int[,] grid = new int[n,m];
 
@@ -54,7 +86,7 @@ namespace Task14
                 }
             }
 
-            Labeling(grid, n,m);
+            WriteLine($"This image has{Labeling(grid, n, m)} items, here is it: ");
 
             for (int i = 0; i < n; i++)
             {
