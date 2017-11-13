@@ -12,24 +12,26 @@ namespace Task22
             {
                 for (int i = b.Length - 1; i >= 0; i--)
                 {
-                    if (a[i] + b[i] > 9)
+                    int k = a.Length - b.Length;
+                    if (a[i + k] + b[i] > 9)
                     {
-                        a[i - 1]++;
-                        a[i] = (a[i] + b[i]) % 10;
+                        a[i + k - 1]++;
+                        a[i + k] = (a[i + k] + b[i]) % 10;
                     }
-                    else a[i] += b[i];
+                    else a[i + k] += b[i];
                 }
                 
                 return a;
             }
-            for (int i = a.Length - 1; i >= 0; i--)
+            for (int i = b.Length - 1; i >= 0; i--)
             {
-                if (a[i] + b[i] > 9)
+                int k = b.Length - a.Length;
+                if (a[i] + b[i + k] > 9)
                 {
-                    b[i - 1]++;
-                    b[i] = (a[i] + b[i]) % 10;
+                    b[i + k - 1]++;
+                    b[i + k] = (a[i] + b[i + k]) % 10;
                 }
-                else b[i] += a[i];
+                else b[i + k] += a[i];
             }
             return b;
         }
