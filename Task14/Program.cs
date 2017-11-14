@@ -13,56 +13,42 @@ namespace Task14
 
         public static int Labeling(int[,] image, int n, int m)
         {
-            int L = 1;
-            bool hasLabeled = false;
+            int L = 0;
 
             for (int i = 0; i < n; i++)
             {
                 for (int j = 0; j < m; j++)
                 {
-                    if (image[i, j] != 0)
+                    if (image[i,j] == 1 && i == n-1 && j == m-1)
                     {
-                        if (!hasLabeled)
-                            try
-                            {
-                                if(image[i - 1, j] != L && image[i + 1, j] != L) L++;
-                            }
-                            catch (IndexOutOfRangeException) { }
-                            
                         
-                        image[i, j] = L;
-                        try
-                        {
-                            if (image[i + 1, j] == 1) image[i + 1, j] = L;
-                        }
-                        catch (IndexOutOfRangeException)
-                        {
-                            try
-                            {
-                                if (image[i, j + 1] == 1) image[i, j + 1] = L;
-                            }
-                            catch (IndexOutOfRangeException) { }
-                        }
-                        try
-                        {
-                            if (image[i, j + 1] == 1) image[i, j + 1] = L;
-                        }
-                        catch (IndexOutOfRangeException)
-                        {
-                            try
-                            {
-                                if (image[i + 1, j] == 1) image[i + 1, j] = L;
-                            }
-                            catch (IndexOutOfRangeException) { }
-                        }
-                        hasLabeled = true;
-                    }else if (image[i, j] == 0)
+                    }
+                    else if (image[i,j] == 1 && i == n-1)
                     {
-                        hasLabeled = false;
+                        if (image[i, j + 1] == 1) image[i, j] = 0;
+                        //if (image[i, j + 1] == 1) image[i, j] = 0;
+                    }
+                    else if(image[i, j] == 1 && j == m-1 )
+                    {
+                        if (image[i + 1, j] == 1) image[i, j] = 0;
+                        //if (image[i, j + 1] == 1) image[i, j] = 0;
+                    }
+                    else if(image[i,j] == 1)
+                    {
+                        if (image[i + 1, j] == 1) image[i, j] = 0;
+                        if (image[i, j + 1] == 1) image[i, j] = 0;
                     }
                 }
-                
             }
+
+            for (int i = 0; i < n; i++)
+            {
+                for (int j = 0; j < m; j++)
+                {
+                    L += image[i, j];
+                }
+            }
+
             return L;
         }
 

@@ -15,7 +15,7 @@ namespace Task22
             string[] inputs = Regex.Split(ReadLine(), @"");
             int[] a = new int[inputs.Length -1];
             for (var i = 1; i < inputs.Length-1; i++)
-                a[i ] = int.Parse(inputs[i]);
+                a[i] = int.Parse(inputs[i]);
 
             WriteLine("Enter b: ");
             inputs = Regex.Split(ReadLine(), @"");
@@ -23,15 +23,6 @@ namespace Task22
             for (var i = 1; i < inputs.Length -1; i++)
                 b[i ] = int.Parse(inputs[i]);
 
-            foreach (var i in a)
-            {
-                Write(i);
-            }
-            WriteLine();
-            foreach (var i in b)
-            {
-                Write(i);
-            }
             WriteLine();
             int[] c = LongA.LongAddition(a, b);
 

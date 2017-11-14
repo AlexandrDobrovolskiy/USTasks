@@ -14,7 +14,7 @@ namespace Task27
             for (int i = 2; true;)
             {
                 if (n % i != 0)
-                {
+                {  
                     i++;
                     continue;
                 }
