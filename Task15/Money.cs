@@ -7,13 +7,13 @@ namespace Task15
     public struct Money
     {
         public int grn, cop;
-        public bool isNegative;
+        public int totalCop;
 
         public Money(int grn, int cop)
         {
             this.cop = cop;
             this.grn = grn;
-            isNegative = false;
+            totalCop = grn * 100 + cop;
         }
 
         public static Money Addition(Money money1, Money money2)
@@ -33,30 +33,20 @@ namespace Task15
         public static Money Subtraction(Money money1, Money money2)
         {
             Money res = new Money();
-            res.cop = money1.cop - money2.cop;
-            res.grn = money1.grn - money2.grn;
-            
 
-            if (res.grn <= 0)
-            {
-                if(res.cop < 0)
-                    res.cop *= -1;
-                
-                res.isNegative = true;
-                
-                if (res.cop == 0 && res.grn == 0)
-                    res.isNegative = false;
+            res.totalCop = money1.totalCop - money2.totalCop;
 
-            }
+            res.grn = res.totalCop / 100;
+            res.cop = res.totalCop % 100;
 
             return res;
         }
 
         public string ToString()
         {
-            if (isNegative)
+            if (this.totalCop < 0)
             {
-                return $"-{this.grn}grn {this.cop}cop";
+                return $"-{this.grn}grn {this.cop * (-1)}cop";
             }
             return $"{this.grn}grn {this.cop}cop";
         }
